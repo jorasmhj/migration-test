@@ -34,8 +34,5 @@ jobs:
           node-version: '18.x'
 
       - name: Migrate
-        run: |
-          BASE_BRANCH=${{ github.base_ref }}
-          if [[ $BASE_BRANCH == "main" ]]; then
-            yarn migrate:up -d
-          fi
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: yarn migrate:up
