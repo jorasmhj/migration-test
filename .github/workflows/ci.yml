@@ -39,9 +39,9 @@ jobs:
       - run: yarn
 
       - name: Migrate Dry Run
-        if: github.event_name == 'pull_request' && github.base_ref == 'refs/heads/main'
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
         run: yarn migrate:up -d
 
       - name: Migrate
-        if: github.event_name == 'push' && github.base_ref == 'refs/heads/main'
+        if: github.event_name == 'push' && github.base_ref == 'main'
         run: yarn migrate:up
