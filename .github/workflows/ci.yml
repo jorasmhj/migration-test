@@ -18,6 +18,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - run: echo "Deploying to production server on branch $GITHUB_REF with event $GITHUB_EVENT_NAME"
+
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
