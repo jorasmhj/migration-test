@@ -43,5 +43,5 @@ jobs:
         run: yarn migrate:up -d
 
       - name: Migrate
-        if: github.event_name == 'push' && github.base_ref == 'main'
+        if: github.event_name == 'push' && github.ref == 'main'
         run: yarn migrate:up
