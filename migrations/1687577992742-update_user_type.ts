@@ -4,9 +4,7 @@ class Migration implements IMigration {
   /**
    * Run the migrations.
    */
-  async up(db: DB) {
-    throw new Error('asd')
-  }
+  async up(db: DB) {}
 
   /**
    * Reverse the migrations.
