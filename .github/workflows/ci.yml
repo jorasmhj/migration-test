@@ -10,11 +10,9 @@ jobs:
   Migration:
     runs-on: ubuntu-latest
 
-    environment: ${{ github.base_ref }}
-
     env:
-      URL: '${{ secrets.URL }}'
-      DB_NAME: '${{ secrets.DB_NAME }}'
+      URL: '${{ secrets.DB_URL }}'
+      DB_NAME: '${{ secrets.DEV_DB_NAME }}'
 
     permissions:
       contents: write # to be able to publish a GitHub release
@@ -52,4 +50,6 @@ jobs:
 
       - name: Migrate
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          DB_NAME: '${{ secrets.PROD_DB_NAME }}'
         run: yarn migrate:up
