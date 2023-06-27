@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      URL: '${{ secrets.URL }}'
+      URL: '${{ secrets.DB_URL }}'
       DB_NAME: '${{ secrets.DEV_DB_NAME }}'
 
     permissions:
