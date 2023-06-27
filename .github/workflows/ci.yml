@@ -1,7 +1,4 @@
 name: CI
-env:
-  URL: '${{ secrets.URL }}'
-  DB_NAME: '${{ secrets.DB_NAME }}'
 
 on:
   push:
@@ -12,6 +9,10 @@ on:
 jobs:
   Migration:
     runs-on: ubuntu-latest
+    environment: main
+    env:
+      URL: '${{ secrets.URL }}'
+      DB_NAME: '${{ secrets.DB_NAME }}'
     permissions:
       contents: write # to be able to publish a GitHub release
       issues: write # to be able to comment on released issues
