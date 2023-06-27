@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "migrate:create": "mongo-migration create",
-    "migrate:up": "mongo-migration up",
-    "migrate:status": "mongo-migration status"
+    "migrate:create": "mongo-migrate create",
+    "migrate:up": "mongo-migrate up",
+    "migrate:status": "mongo-migrate status"
   },
   "dependencies": {
     "db-mongo-migration": "^1.2.1"
