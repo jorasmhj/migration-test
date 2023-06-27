@@ -1,4 +1,7 @@
 name: CI
+env:
+  URL: ${{ secrets.URL }}
+  DB_NAME: ${{ secrets.DB_NAME }}
 
 on:
   push:
@@ -18,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - run: echo "Deploying to production server on branch $GITHUB_BASE_REF with event $GITHUB_EVENT_NAME"
+      - run: echo "Deploying to production server on branch $GITHUB_BASE_REF with event $GITHUB_EVENT_NAME" with $URL and $DB_NAME
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
