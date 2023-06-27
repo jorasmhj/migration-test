@@ -5,9 +5,10 @@
   "license": "MIT",
   "scripts": {
     "migrate:create": "mongo-migration create",
-    "migrate:up": "mongo-migration up"
+    "migrate:up": "mongo-migration up",
+    "migrate:status": "mongo-migration status"
   },
   "dependencies": {
-    "db-mongo-migration": "^1.0.4"
+    "db-mongo-migration": "^1.2.1"
   }
 }
